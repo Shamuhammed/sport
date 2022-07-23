@@ -1,0 +1,158 @@
+//buttons
+.btn {
+   position: relative;
+   display: inline-block;
+   height: 44px;
+   padding: 0 30px;
+   transition: all .3s ease;
+
+   font-family: $ff2;
+   font-style: normal;
+   font-weight: 500;
+   font-size: 16px;
+   line-height: 44px;
+   letter-spacing: 0.05em;
+   text-transform: uppercase;
+
+   cursor: pointer;
+   user-select: none;
+
+   &:hover {}
+   &.fw{}
+
+   &__white {
+      color: $_pink;
+      background: $_white;border: 1px solid $_white;      
+      overflow: hidden;
+      transition: all .3s ease;
+
+      &:hover {
+         background-color: transparent;
+         color: $_white;
+      }
+
+      &:active {
+         background-color: $_lightBlack;
+         color: $_white;
+      }
+   }
+
+      &__form {
+      @media (max-width: $md1) {
+         max-width: 100%;
+         width: 100%;
+      }
+   }
+
+   &__pink {
+      color: #FFFFFF;
+      background: $_pink;
+   }
+
+   &__shine {
+      position: relative;
+      overflow: hidden;
+
+      &::before, &::after {
+         position: absolute;
+         top: 0;
+         left: -75%;
+         z-index: 2;
+         display: block;
+         content: "";
+         width: 50%;
+         height: 100%;
+         background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 100%);
+           background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 100%);
+           -webkit-transform: skewX(-25deg);
+           transform: skewX(-25deg);
+      }
+      &::after {
+         opacity: .7;
+         width: 20%;
+      }
+
+      &:hover {
+         &::before, &::after {
+            animation: shine 1s;
+            -webkit-animation: shine 1s;
+         }
+         box-shadow: 0px 0px 20px rgba(248, 8, 85, 0.4);
+      }
+
+      &:active {
+         background-color: $_lightBlack;
+         color: $_white;
+      }
+   }
+
+
+   &__border-white {
+      border: 1px solid $_white;
+      color: $_white;
+
+      &:hover {
+         background-color: $_lightBlack;
+      }
+   }
+}
+//==================================================
+//input
+// input[type=text], input[type=email], input[type=tel], textarea{-webkit-appearance: none; -moz-appearance: none; appearance: none;}
+.input {
+   border-radius: 0 !important;
+   background-color: #E4DEDF;
+
+   display: block;
+   width: 100%;
+   height: 44px;
+   padding: 0 16px;
+
+   font-family: $ff2;
+   font-style: normal;
+   font-weight: 400;
+   font-size: 18px;
+   line-height: 44px;
+   color: $_lightBlack;
+
+   position: relative;
+
+   &.focus{}
+   &::placeholder {
+      color: #676363;
+   }
+}
+textarea.input {}
+
+.input-container {
+   position: relative;
+   z-index: 1;
+
+   &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 16px;
+      z-index: 2;
+      transform: translate(-50%, -50%);
+
+      width: 20px;
+      height: 20px;
+      background-image: url('../img/icons/warning.svg');
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      opacity: 0;
+   }
+
+   &._error {
+      &::before {
+         opacity: 0.7;
+      }
+      input[name], input[email], input[tel] {
+         animation: shake 300ms;
+         border: 1px solid #FF0000;
+      }
+   }
+
+}
