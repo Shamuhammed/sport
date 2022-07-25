@@ -11,11 +11,8 @@
 @import '_mixins';
 @import "_forms";
 @import "_ui";
-//@import "popups"
 @import "_ibg";
-//@import "_popups";
-
-//library
+@import "_popups";
 
 //components
 @import "_header";
@@ -31,8 +28,8 @@ body {
 .main {
    flex: 1 1 auto;
 }
-//============================================================
-//banner
+//===============================================================================================================
+// section banner
 .banner {
    position: relative;
    width: 100%;
@@ -155,8 +152,8 @@ body {
    &__button {padding: 0 10px;}
 }
 
-//=======================================================
-// easy-start
+//===============================================================================================================
+// section easy-start
 .easy-start {
 
    &__body {
@@ -219,8 +216,8 @@ body {
       }
    }
 }
-//=======================================================
-// classes
+//===============================================================================================================
+// section classes
 .classes {
    position: relative;
 
@@ -350,8 +347,8 @@ body {
       }
    }
 }
-//=======================================================
-// about
+//===============================================================================================================
+// section about
 .about {
    position: relative;
    opacity: 0;
@@ -415,8 +412,8 @@ body {
       }
    }
 } 
-//=======================================================
-// price
+//===============================================================================================================
+// section price
 .price {
    padding: 100px 0;
    position: relative;
@@ -530,8 +527,8 @@ body {
    &__link {
    }
 }
-//=======================================================
-// instructors
+//===============================================================================================================
+// section instructors
 .instructors {
    position: relative;
 
@@ -569,8 +566,8 @@ body {
       }
    }
 }
-//=======================================================
-// reviews
+//===============================================================================================================
+// section reviews
 .reviews {
    position: relative;
    min-height: 100vh;
@@ -719,8 +716,8 @@ body {
    &__profession {
    }
 }
-//=======================================================
-// reviews
+//===============================================================================================================
+// section reviews
 .goto-up {
    position: fixed;
    bottom: 30px;
@@ -784,103 +781,4 @@ body {
    visibility: visible;
    bottom: 30px;
    right: 30px;
-}
-
-//=======================================================
-// reviews
-.popup {
-   position: fixed;
-   top: 0;
-   left: 0;
-   z-index: 50;
-
-   width: 100%;
-   height: 100%;
-
-   background: rgba(0, 0, 0, 0.9);
-   overflow-y: auto;
-   overflow-x: hidden;
-
-   visibility: hidden;
-   opacity: 0;
-   transition: all .8s ease-in;
-
-   &__body {
-      width: 100%;
-      height: 100%;
-
-      display: flex;
-      justify-content: center;
-      align-items: center;
-   }
-
-   &__content {
-      max-width: 500px;
-      padding: 30px;
-      background: $_white;
-
-      position: relative;
-      transition: all .8s ease-in;
-      transform: translateY(-500%);
-   }
-
-   &__close {
-      width: 30px;
-      height: 30px;
-
-      border-radius: 50%;
-      border: 1px solid $_black;
-
-      position: absolute;
-      top: 30px;
-      right: 30px;
-
-      opacity: .5;
-
-      &::after, &::before {
-         content: "";
-         width: 14px;
-         height: 1px;
-         background: $_black;
-
-         position: absolute;
-         top: 13.5px;
-         left: 7px;
-      }
-      &::after {
-         transform: rotate(45deg);
-      }
-      &::before {
-         transform: rotate(-45deg);
-      }
-      &:hover {
-         opacity: .8;
-      }
-   }
-
-   &__title {
-      font-size: 24px;
-      line-height: 130%;
-      font-weight: bold;
-      margin: 0 0 24px 0;
-   }
-
-   &__text {
-      font-size: 16px;
-      line-height: 130%;
-   }
-
-   &__button {
-      margin: 30px 0 0 0;
-   }
-}
-.open {
-   &.popup {
-      visibility: visible;
-      opacity: 1;          
-   }
-   & .popup__content {
-      transition: all .8s ease-in;
-      transform: translateY(0%);
-   }
 }

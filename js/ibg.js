@@ -1,3 +1,4 @@
+// background
 function ibg() {
 
    let ibg = document.querySelectorAll(".ibg");
